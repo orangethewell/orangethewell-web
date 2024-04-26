@@ -1,0 +1,56 @@
+{
+    "date": [
+        {
+            "count": 1,
+            "value": "{{ day }} de Janeiro de {{ year }}"
+        },
+        {
+            "count": 2,
+            "value": "{{ day }} de Fevereiro de {{ year }}"
+        },
+        {
+            "count": 3,
+            "value": "{{ day }} de Março de {{ year }}"
+        },
+        {
+            "count": 4,
+            "value": "{{ day }} de Abril de {{ year }}"
+        },
+        {
+            "count": 5,
+            "value": "{{ day }} de Maio de {{ year }}"
+        },
+        {
+            "count": 6,
+            "value": "{{ day }} de Junho de {{ year }}"
+        },
+        {
+            "count": 7,
+            "value": "{{ day }} de Julho de {{ year }}"
+        },
+        {
+            "count": 8,
+            "value": "{{ day }} de Agosto de {{ year }}"
+        },
+        {
+            "count": 9,
+            "value": "{{ day }} de Setembro de {{ year }} "
+        },
+        {
+            "count": 10,
+            "value": "{{ day }} de Outubro de {{ year }}"
+        },
+        {
+            "count": 11,
+            "value": "{{ day }} de Novembro de {{ year }}"
+        },
+        {
+            "count": 12,
+            "value": "{{ day }} de Dezembro de {{ year }}"
+        },
+        {
+            "count": "_",
+            "value": "{{ day }} de SemNome de {{ year }}"
+        }
+    ]
+}

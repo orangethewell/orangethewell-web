@@ -1,0 +1,56 @@
+{
+    "date": [
+        {
+            "count": 1,
+            "value": "January {{ day }}, {{ year }}"
+        },
+        {
+            "count": 2,
+            "value": "February {{ day }}, {{ year }}"
+        },
+        {
+            "count": 3,
+            "value": "March {{ day }}, {{ year }}"
+        },
+        {
+            "count": 4,
+            "value": "April {{ day }}, {{ year }}"
+        },
+        {
+            "count": 5,
+            "value": "May {{ day }}, {{ year }}"
+        },
+        {
+            "count": 6,
+            "value": "June {{ day }}, {{ year }}"
+        },
+        {
+            "count": 7,
+            "value": "July {{ day }}, {{ year }}"
+        },
+        {
+            "count": 8,
+            "value": "August {{ day }}, {{ year }}"
+        },
+        {
+            "count": 9,
+            "value": "September {{ day }}, {{ year }}"
+        },
+        {
+            "count": 10,
+            "value": "October {{ day }}, {{ year }}"
+        },
+        {
+            "count": 11,
+            "value": "November {{ day }}, {{ year }}"
+        },
+        {
+            "count": 12,
+            "value": "December {{ day }}, {{ year }}"
+        },
+        {
+            "count": "_",
+            "value": "Unnamed {{ day }}, {{ year }}"
+        }
+    ]
+}

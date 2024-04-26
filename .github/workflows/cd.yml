@@ -1,0 +1,68 @@
+name: orangethewell.is-a.dev CD
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+      
+      - name: Restauração do Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin
+            ~/.cargo/git
+            ~/.cargo/registry
+            project/frontend/target
+            project/dist
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+      
+      - name: Instalação do Trunk
+        uses: jetli/trunk-action@v0.4.0
+        with:
+          version: "latest"
+      
+      - name: Adicionar WASM como alvo de compilação
+        run: |
+          rustup target add wasm32-unknown-unknown
+        
+      - name: Compilação do WASM do subdomínio WWW
+        working-directory: ${{github.workspace}}/project/frontend/www
+        run: trunk build --dist ../../dist --release
+      
+      - name: Compilação do WASM do subdomínio ADMIN
+        working-directory: ${{github.workspace}}/project/frontend/admin
+        run: trunk build --public-url /admin/ --dist ../../dist/admin --release
+
+      - name: Exposição da chave secreta
+        run: echo ${{ secrets.SERVER_SECRET_KEY }} >> ./project/keyring_server.txt & ls .
+
+      - name: Deploy do servidor
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SERVER_SSH_KEY}}
+          ARGS: "-rltgoDzvO --delete"
+          SOURCE: "project/"
+          REMOTE_HOST: ${{secrets.REMOTE_HOST}}
+          REMOTE_USER: ${{secrets.REMOTE_USER}}
+          TARGET: ${{secrets.REMOTE_TARGET}}
+
+      # - name: Configuração do SSH
+      #   run: |
+      #     env
+      #     mkdir -p ~/.ssh
+      #     echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
+      #     chmod 600 ~/.ssh/id_ed25519
+      #     ssh-keyscan -p 22 -t ed25519 ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
+  
+      # - name: Deploy da distribuição do Frontend
+      #   run: |
+      #     rsync -azP -e "ssh -i $HOME/.ssh/id_ed25519 -p 22" ./dist ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_TARGET }}/dist
+  
+
+      

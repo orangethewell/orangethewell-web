@@ -1,0 +1,33 @@
+services:
+  web:
+    profiles:
+      - prod
+    build: .
+    ports:
+      - "5080:5080"
+    expose:
+      - "5080"
+    volumes:
+      - web:/app/data/uploads
+
+  redis:
+    profiles:
+      - prod
+      - dev
+    image: "redis:alpine"
+
+  database:
+    profiles:
+      - prod
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: orange-blog
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+  web:

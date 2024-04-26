@@ -1,0 +1,5 @@
+{
+    "recent_post": "Posts recentes",
+    "contact": "Contato",
+    "post_error": "Ocorreu um erro ao tentar requisitar os posts no servidor: {{ msg }}"
+}

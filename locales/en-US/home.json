@@ -1,0 +1,6 @@
+{
+    "recent_post": "Recent posts",
+    "contact": "Contact",
+    "post_error": "A error occured on fetching data from server: {{ msg }}"
+
+}

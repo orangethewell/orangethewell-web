@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-family: 'minecraft', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+@keyframes slideDown { from { max-height: 0; } to { max-height: 1000px; } }
+@keyframes slideUp { from { max-height: 1000px; } to { max-height: 0; } }
+.slideDown500 { overflow: hidden; animation: 500ms slideDown cubic-bezier(.77,0,.18,1); }
+.slideUp500 { overflow: hidden; animation: 500ms slideUp cubic-bezier(.77,0,.18,1); }
+.slideDown250 { overflow: hidden; animation: 250ms slideDown cubic-bezier(.77,0,.18,1); }
+.slideUp250 { overflow: hidden; animation: 250ms slideUp cubic-bezier(.77,0,.18,1); }
+
+.md-content-area {
+    h1 {
+        @apply text-5xl font-extrabold
+    }
+
+    h2 {
+        @apply text-4xl font-extrabold
+    }
+
+    h3 {
+        @apply text-3xl font-bold
+    }
+
+    h4 {
+        @apply text-2xl font-bold
+    }
+
+    h5 {
+        @apply text-xl font-bold
+    }
+
+    h6 {
+        @apply text-lg font-bold
+    }
+
+    p {
+        @apply my-3
+    }
+}
