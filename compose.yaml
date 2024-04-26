@@ -3,12 +3,19 @@ services:
     profiles:
       - prod
     build: .
+    command: ["/app/orangethewell-web"]
+    secrets:
+      - keyring_server
     ports:
       - "5080:5080"
     expose:
       - "5080"
     volumes:
       - web:/app/data/uploads
+    develop:
+      watch:
+        - action: rebuild
+          path: .
 
   redis:
     profiles:
@@ -31,3 +38,7 @@ services:
 volumes:
   pgdata:
   web:
+
+secrets:
+  keyring_server:
+    file: keyring_server.txt

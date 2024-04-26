@@ -51,9 +51,6 @@ ENV LEPTOS_SITE_ROOT="site"
 
 ENV REDIS_URL="redis://redis:6389"
 ENV DATABASE_URL="postgres://postgres:admin@database:5432/orange-blog"
+# This key is only used on DEV
 ENV SECRET_KEY="testkkey"
 EXPOSE 5080
-
-# -- NB: update binary name from "leptos_start" to match your app name in Cargo.toml --
-# Run the server
-CMD ["/app/orangethewell-web"]
