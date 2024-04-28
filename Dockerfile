@@ -49,7 +49,7 @@ ENV RUST_LOG="info"
 ENV LEPTOS_SITE_ADDR="0.0.0.0:5080"
 ENV LEPTOS_SITE_ROOT="site"
 
-ENV REDIS_URL="redis://redis:6389"
+ENV REDIS_URL="redis://redis:6379"
 ENV DATABASE_URL="postgres://postgres:admin@database:5432/orange-blog"
 # This key is only used on DEV
 ENV SECRET_KEY="testkkey"
