@@ -1,90 +1,35 @@
-<picture>
-    <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_Solid_White.svg" media="(prefers-color-scheme: dark)">
-    <img src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg" alt="Leptos Logo">
-</picture>
+<h1 align=center>Orange's Museum</h1>
+<p align=center><img src=".github/icon.png"/></p>
+<p align=center>I'm <b>Orangethewell</b> and welcome to my personal space!</p>
 
-# Leptos Axum Starter Template
+## 📖 TL;DR
 
-This is a template for use with the [Leptos](https://github.com/leptos-rs/leptos) web framework and the [cargo-leptos](https://github.com/akesson/cargo-leptos) tool using [Axum](https://github.com/tokio-rs/axum).
+Feel free to fork this repository or clone it and use for your porposes. This contains a lot of boilerplate code that can help you quickstart a larger project. Take a look on _[Leptos Documentation](https://book.leptos.dev/)_ for more details about the technical working of this project.
 
-## Creating your template repo
+I don't think you will need to touch _Axum_, but if it's needed, take a look on it's [docs](https://docs.rs/axum/latest/axum/) too.
 
-If you don't have `cargo-leptos` installed you can install it with
+## 🧑‍💻 Technologies 
+This project is written using _Rust_ programming language. But there's a lot of things running on background!
 
-```bash
-cargo install cargo-leptos
-```
+- 🖥️ **Frontend**: [Leptos](https://leptos.dev/)
+- ⚙️ **Backend**: [Axum](https://github.com/tokio-rs/axum)
+- 🔒 **Session Management**: [Redis](https://redis.io/) (using [Redis-rs](https://github.com/redis-rs/redis-rs))
+- 📁 **Database**: [PostgreSQL](https://www.postgresql.org/) (using [SeaORM](https://www.sea-ql.org/SeaORM/))
+- 🐳 **Containerization and Integration**: [Docker](https://www.docker.com)
+- ↪️ **Reverse Proxy**: [Nginx](https://www.nginx.com/)
+- 🧰 **Deployment**: [Github Actions](https://github.com/orangethewell/orangethewell-web/actions) with SSH
 
-Then run
-```bash
-cargo leptos new --git leptos-rs/start-axum
-```
+## 📙 Motivation
 
-to generate a new project template.
+This website was created as a personal blog and as a test to improve my knowledge both with _Rust_ technologies like _Leptos_ and _Axum_, and with website server management, since before this project I was using a panel to handle everything together, and it wasn't working as expected.
 
-```bash
-cd orangethewell-web
-```
+After some studies, I got everything working. And now, I expect to write some articles about technology on this blog.
 
-to go to your newly created project.  
-Feel free to explore the project structure, but the best place to start with your application code is in `src/app.rs`.  
-Addtionally, Cargo.toml may need updating as new versions of the dependencies are released, especially if things are not working after a `cargo update`.
+## 🌐 Internationalization
 
-## Running your project
+For sort, I plan internationalizing both posts and the website itself to English and Portuguese. If you think that some article is helpful and should be translated to another language, create a [new issue](https://github.com/orangethewell/orangethewell-web/issues/new/choose) to let us discuss about it. 
 
-```bash
-cargo leptos watch
-```
+OBS: Check if there isn't anyone already working with the post you want to another language.
 
-## Installing Additional Tools
-
-By default, `cargo-leptos` uses `nightly` Rust, `cargo-generate`, and `sass`. If you run into any trouble, you may need to install one or more of these tools.
-
-1. `rustup toolchain install nightly --allow-downgrade` - make sure you have Rust nightly
-2. `rustup target add wasm32-unknown-unknown` - add the ability to compile Rust to WebAssembly
-3. `cargo install cargo-generate` - install `cargo-generate` binary (should be installed automatically in future)
-4. `npm install -g sass` - install `dart-sass` (should be optional in future
-
-## Compiling for Release
-```bash
-cargo leptos build --release
-```
-
-Will generate your server binary in target/server/release and your site package in target/site
-
-## Testing Your Project
-```bash
-cargo leptos end-to-end
-```
-
-```bash
-cargo leptos end-to-end --release
-```
-
-Cargo-leptos uses Playwright as the end-to-end test tool.  
-Tests are located in end2end/tests directory.
-
-## Executing a Server on a Remote Machine Without the Toolchain
-After running a `cargo leptos build --release` the minimum files needed are:
-
-1. The server binary located in `target/server/release`
-2. The `site` directory and all files within located in `target/site`
-
-Copy these files to your remote server. The directory structure should be:
-```text
-orangethewell-web
-site/
-```
-Set the following environment variables (updating for your project as needed):
-```text
-LEPTOS_OUTPUT_NAME="orangethewell-web"
-LEPTOS_SITE_ROOT="site"
-LEPTOS_SITE_PKG_DIR="pkg"
-LEPTOS_SITE_ADDR="127.0.0.1:3000"
-LEPTOS_RELOAD_PORT="3001"
-```
-Finally, run the server binary.
-
-## Licensing
-
-This template itself is released under the Unlicense. You should replace the LICENSE for your own application with an appropriate license if you plan to release it publicly.
+## ✈️ Discussions and References
+All the things I post on this blog are completely free, you can mention and discuss about it on another site **if you leave the original post link on yours**. And of course, send me an email with your post so I can read it too. 😄
